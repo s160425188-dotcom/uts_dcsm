@@ -1,0 +1,9 @@
+FROM python:3.10-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY certs/ ./certs/
+COPY proto/ ./proto/
+COPY src/ ./src/
+RUN mkdir -p src/generated && python -m grpc_tools.protoc -Iproto --python_out=src/generated --grpc_python_out=src/generated proto/storage.proto
+CMD ["python", "src/test_scenarios.py"]

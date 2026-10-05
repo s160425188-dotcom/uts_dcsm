@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  storage-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    container_name: dcsm_storage_server
+    ports:
+      - "50051:50051"
+    volumes:
+      - shared_storage:/app/storage_data
+
+  test-client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    container_name: dcsm_test_client
+    environment:
+      - SERVER_HOST=storage-server
+    volumes:
+      - shared_storage:/app/storage_data
+    depends_on:
+      - storage-server
+
+volumes:
+  shared_storage:

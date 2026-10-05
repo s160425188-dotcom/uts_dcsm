@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package storage;
+
+enum SecurityLabel {
+  PUBLIC = 0;
+  SECRET = 1;
+}
+
+message UploadRequest {
+  string filename = 1;
+  bytes content = 2;
+  SecurityLabel label = 3;
+}
+
+message UploadResponse {
+  string filename = 1;
+  string sha256_checksum = 2;
+  string message = 3;
+}
+
+message DownloadRequest {
+  string filename = 1;
+}
+
+message DownloadResponse {
+  string filename = 1;
+  bytes content = 2;
+  string sha256_checksum = 3;
+  SecurityLabel label = 4;
+}
+
+service SecureStorageService {
+  rpc UploadFile (UploadRequest) returns (UploadResponse);
+  rpc DownloadFile (DownloadRequest) returns (DownloadResponse);
+}

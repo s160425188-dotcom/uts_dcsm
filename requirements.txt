@@ -1,0 +1,4 @@
+grpcio==1.62.0
+grpcio-tools==1.62.0
+pyjwt==2.8.0
+cryptography==42.0.5

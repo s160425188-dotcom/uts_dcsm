@@ -1,0 +1,5 @@
+{"timestamp": "2026-10-05T08:57:34.261864Z", "user": "bob_user", "role": "USER", "action": "UPLOAD", "resource": "doc_public.txt", "decision": "ALLOW", "reason": "SHA256: df9e5f778c792f6b48155b5842f9199258030cf3cfd70e2447b950e5ed12e1b9"}
+{"timestamp": "2026-10-05T08:57:34.268762Z", "user": "bob_user", "role": "USER", "action": "DOWNLOAD", "resource": "doc_public.txt", "decision": "ALLOW", "reason": "SHA256 Valid: df9e5f778c792f6b48155b5842f9199258030cf3cfd70e2447b950e5ed12e1b9"}
+{"timestamp": "2026-10-05T08:57:34.289258Z", "user": "alice_admin", "role": "ADMIN", "action": "UPLOAD", "resource": "doc_secret.txt", "decision": "ALLOW", "reason": "SHA256: e4ce39bccf85f5bdea4cd7aa10a2357478f2e7ddccc7befb73c0bb5ffd6aac96"}
+{"timestamp": "2026-10-05T08:57:34.298110Z", "user": "bob_user", "role": "USER", "action": "DOWNLOAD", "resource": "doc_secret.txt", "decision": "DENY", "reason": "User tidak berhak mengunduh berkas SECRET"}
+{"timestamp": "2026-10-05T08:57:34.353694Z", "user": "bob_user", "role": "USER", "action": "DOWNLOAD", "resource": "doc_public.txt", "decision": "DENY", "reason": "File Integrity Compromised (Tampered!)"}

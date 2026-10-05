@@ -1,0 +1,20 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environments
+venv/
+.env
+
+# IDEs
+.idea/
+.vscode/
+
+# Temporary storage runtime data (opsional, pertahankan struktur folder)
+storage_data/*
+!storage_data/.gitkeep
+
+# Operating System
+.DS_Store
